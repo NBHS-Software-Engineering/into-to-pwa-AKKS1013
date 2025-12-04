@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
+
+:root {
+  --background: #323031;
+  --error: #edf2f4;
+  --primary: #3d3b3c;
+  --secondary: #7f7979;
+  --highlight: #c1bdb3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jetbrains Mono", sans-serif;
+  font-size: 1rem;
+  color: var(--background);
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary);
+  border-radius: 25px;
+}
+
+nav img {
+  height: 100px;
+  margin-left: 5px;
+}
+
+nav h1 {
+  margin-bottom: 0.5rem;
+  /* margin-left: 4rem; */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 17rem;
+  background: var(--error);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.card-name {
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  justify-self: center;
+}
+
+.card-about {
+  text-overflow: ellipsis;
+  width: 15rem;
+  white-space: wrap;
+  overflow: visible;
+  margin-bottom: 1rem;
+}
+
+.color-about p {
+  color: color-mix(in srgb, var(--highlight) 10, #000 90);
+}
+
+.btn {
+  border: none;
+  background: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(21, 21, 21, 0.1);
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin: 0 1rem;
+  padding: 0.25rem 2rem;
+  transition: all 0.25s ease-in-out;
+  background: var(--primary);
+  color: var(--highlight);
+  margin-bottom: 1rem;
+}
+
+.btn:focus,
+.btn:hover {
+  box-shadow: 1px 1px 2px rgba(21, 21, 21, 0.2);
+  background: var(--secondary);
+}
+
+.about-container {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.form-control {
+  text-align: center;
+  font-size: large;
+  width: 80%;
+  border-radius: 5px;
+  background-color: var(--secondary);
+  border-color: var(--primary);
+  margin: auto;
+}
+
+.form-label {
+  padding-top: 20px;
+  color: var(--highlight);
+}
+
+search {
+  display: grid;
+  position: sticky;
+  top: 0;
+}
+
+search form {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  justify-self: center;
+}
+
+#search {
+  width: 25%;
+  min-width: 150px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+#search::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+#newtag {
+  width: 25%;
+  min-width: 150px;
+  margin-top: 10px;
+}
+
+#searchbtn {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  align-items: left;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 1%;
+  background-color: var(--primary);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: var(--highlight);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--secondary);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn {
+  border: none;
+  width: 100;
+}
+
+.gapbelow {
+  margin-bottom: 5cap;
+}
+
+.error {
+  background-color: var(--error);
+  border-radius: 7px;
+  width: fit-content;
+  margin: auto;
+}
+
+.error b {
+  padding: 0.5rem 0.5rem;
+}
+
+.box {
+  background-color: rgba(50, 48, 49, 0.7);
+  border-radius: 20px;
+  width: fit-content;
+  margin: auto;
+}

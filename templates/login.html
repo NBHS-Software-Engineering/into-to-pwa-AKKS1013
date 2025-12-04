@@ -1,0 +1,32 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>Login</h1>
+<form action="/login.html" method="POST" class="box">
+  <div class="form">
+    <label class="form-label">Email address</label>
+    <input
+      name="email"
+      type="email"
+      class="form-control"
+      id="email"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
+      size="70"
+    />
+  </div>
+  <div>
+    <label class="form-label">Password</label>
+    <input
+      class="form-control"
+      name="password"
+      id="password"
+      size="65"
+      type="password"
+    ></input>
+  </div>
+  <button type="submit" style="margin: 0;" class="btn">Submit</button>
+</form>
+{% if login == False%}
+<div class="error">
+  <b>email or password incorrect</b>
+</div>
+{% endif %}
+{% endblock %}

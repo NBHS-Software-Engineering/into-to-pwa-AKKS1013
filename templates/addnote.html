@@ -1,0 +1,18 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>Add note</h1>
+<form action="/addnote.html" method="POST" class="box">
+  <div>
+    <label class="form-label">Title</label>
+    <textarea class="form-control" name="title" id="title" rows="1"></textarea>
+    <br />
+    <label class="form-label">Text</label>
+    <textarea class="form-control" name="text" id="text" rows="3"></textarea>
+  </div>
+  <div>
+    <button class="btn" style="margin: 0">Add Note</button>
+    {% if error == True %}
+    <h1>An error occurred. Please try again</h1>
+    {% endif %}
+  </div>
+</form>
+{% endblock %}

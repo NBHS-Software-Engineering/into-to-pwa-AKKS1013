@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {% block content %} {% if user != "Fallback" %}
+<search>
+  <form action="/dashboard.html" method="POST">
+    <input
+      name="search"
+      type="search"
+      class="form-control"
+      id="search"
+      placeholder="🔎"
+    />
+    <button type="submit" class="btn" id="searchbtn">Search</button>
+    <input
+      list="tags"
+      name="newtag"
+      class="form-control"
+      id="newtag"
+      placeholder="Create or select tag"
+    />
+    <datalist id="tags">
+      {% for tag in tags %}
+      <option value="{{ tag }}"></option>
+      {% endfor %}
+    </datalist>
+  </form>
+</search>
+<div class="container">
+  {% for row in content %} {% if row[1] == user %}
+  <div class="card">
+    <h1 class="card-name">{{ row[3] }}</h1>
+    <p class="card-about">{{ row[2] }}</p>
+    <a
+      class="card-link"
+      href="mailto:{{ row[1] }}?subject={{ row[3] }}&body={{ row[2] }}"
+      target="_blank"
+      ><button class="btn">Email Me!</button></a
+    >
+  </div>
+  {% endif %} {% endfor %}
+</div>
+<div id="btns">
+  <a href="/addnote.html"><button class="btn" id="addnote">Add Note</button></a>
+  <a href="/login.html"><button class="btn" id="logout">Log out</button></a>
+</div>
+{% else %}
+<br />
+<div class="warning"><h1>Please log in to access your notes</h1></div>
+{% endif %} {% endblock %}

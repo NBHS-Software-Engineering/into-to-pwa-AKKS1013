@@ -1,15 +1,20 @@
+// Caches all static assets and basic webpages to be accessed offline, does not cache dynamic elements like updated notes, only displays notes present at caching time.
+// This means no offline functionality as all fetch requests will fail and no data will be saved.
+// Can be fixed adding a queue for offline actions and background sync API (allows tasks to be defered to service worker until connection is stable) to reconcile when the PWA comes back online
+// Does not check for login when accessing cached since cache only stores plain html no template functionality
+
 const assets = [
   "/",
+  "/dashboard.html",
+  "/addnote.html",
+  "/menu.hmtl",
+  "/layout.hmtl",
+  "/login.html",
+  "/add.html",
   "static/css/style.css",
   "static/js/app.js",
-  "static/images/logo.png",
-  "static/images/favicon.png",
-  "static/icons/icon-128x128.png",
-  "static/icons/icon-192x192.png",
-  "static/icons/icon-384x384.png",
-  "static/icons/icon-512x512.png",
-  "static/icons/desktop_screenshot.png",
-  "static/icons/mobile_screenshot.png",
+  "static/icons/logo.png",
+  "static/icons/menu.png",
 ];
 
 const CATALOGUE_ASSETS = "catalogue-assets";
